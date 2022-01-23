@@ -47,7 +47,7 @@ Item {
     
     property var rating: {
         if (!game) { return "" }
-        return (game.rating)  ? "Rating " + game.rating : ""
+        return (game.rating)  ? "Rating " + (game.rating * 100) + "%": ""
     }
 
     property var textColor: {
@@ -185,14 +185,14 @@ Item {
                     font.bold: true
                 }   
 
-                Text {
-                    text: developedBy
-                    color: textColor
-                    opacity: 0.5
-                    font.pixelSize: 18
-                    font.letterSpacing: -0.35
-                    font.bold: true
-                }   
+                // Text {
+                //     text: developedBy
+                //     color: textColor
+                //     opacity: 0.5
+                //     font.pixelSize: 18
+                //     font.letterSpacing: -0.35
+                //     font.bold: true
+                // }   
 
             }
 
