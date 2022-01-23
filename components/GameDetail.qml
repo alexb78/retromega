@@ -34,6 +34,10 @@ Item {
     property var playerGenre : {
         return [players, mainGenre].filter(v => { return v != null }).join(" • ")
     }
+    
+    property var releaseDateRating : {
+        return [releaseDate, rating].filter(v => { return v != null }).join(" • ")
+    }
 
     property var releaseDate: {
         if (!game) { return "" }
@@ -47,7 +51,7 @@ Item {
     
     property var rating: {
         if (!game) { return "" }
-        return (game.rating)  ? "Rating " + (game.rating * 100) + "%": ""
+        return (game.rating)  ? "Rating " + (game.rating * 100).toFixed(0) + "%": ""
     }
 
     property var textColor: {
@@ -166,24 +170,20 @@ Item {
                     wrapMode: Text.WordWrap
                     maximumLineCount: 4                    
                 }
-
-                Text {
-                    text: releaseDate
-                    color: textColor
-                    opacity: 0.5
-                    font.pixelSize: 18
-                    font.letterSpacing: -0.35
-                    font.bold: true 
-                }   
                 
                 Text {
-                    text: rating
+                    text: releaseDateRating
                     color: textColor
                     opacity: 0.5
                     font.pixelSize: 18
                     font.letterSpacing: -0.35
                     font.bold: true
-                }   
+                    width: parent.width
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    wrapMode: Text.WordWrap
+                    maximumLineCount: 4                    
+                }
 
                 // Text {
                 //     text: developedBy
