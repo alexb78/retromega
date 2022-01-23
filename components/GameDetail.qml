@@ -41,7 +41,7 @@ Item {
 
     property var releaseDate: {
         if (!game) { return "" }
-        return (game.releaseYear)  ? "Released " + game.releaseYear : ""
+        return (game.releaseYear)  ? "Released " + game.releaseYear : "Released (NA)"
     }
 
     property var developedBy: {
@@ -51,7 +51,7 @@ Item {
     
     property var rating: {
         if (!game) { return "" }
-        return (game.rating)  ? "Rating " + (game.rating * 100).toFixed(0) + "%": ""
+        return (game.rating)  ? "Rating " + (game.rating * 100).toFixed(0) + "%": "Rating (NA)"
     }
 
     property var textColor: {
