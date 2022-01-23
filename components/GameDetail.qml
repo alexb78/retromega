@@ -51,7 +51,11 @@ Item {
     
     property var rating: {
         if (!game) { return "" }
-        return (game.rating)  ? "Rating " + (game.rating * 100).toFixed(0) + "%": "Rating (NA)"
+        if (game.rating > 1) {
+            return (game.rating)  ? "Rating " + game.rating : "Rating (NA)"
+        } else {
+            return (game.rating)  ? "Rating " + (game.rating * 100).toFixed(0) + "%": "Rating (NA)"
+        }
     }
 
     property var textColor: {
