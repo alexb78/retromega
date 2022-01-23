@@ -175,15 +175,24 @@ Item {
                     font.letterSpacing: -0.35
                     font.bold: true 
                 }   
+                
+                Text {
+                    text: rating
+                    color: textColor
+                    opacity: 0.5
+                    font.pixelSize: 18
+                    font.letterSpacing: -0.35
+                    font.bold: true
+                }   
 
-                // Text {
-                //     text: developedBy
-                //     color: textColor
-                //     opacity: 0.5
-                //     font.pixelSize: 18
-                //     font.letterSpacing: -0.35
-                //     font.bold: true
-                // }   
+                Text {
+                    text: developedBy
+                    color: textColor
+                    opacity: 0.5
+                    font.pixelSize: 18
+                    font.letterSpacing: -0.35
+                    font.bold: true
+                }   
 
             }
 
