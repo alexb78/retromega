@@ -44,6 +44,11 @@ Item {
         if (!game) { return "" }
         return "Developed By " + game.developer
     }
+    
+    property var rating: {
+        if (!game) { return "" }
+        return (game.rating)  ? "Rating " + game.rating : ""
+    }
 
     property var textColor: {
         return "#333333"
