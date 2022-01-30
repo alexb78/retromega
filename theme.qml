@@ -187,7 +187,9 @@ FocusScope {
         "segacd"      : "#C85173",
         "dreamcast"   : "#2387FF",
         "psp"         : "#4E0B9C",
+        "scummvm"     : "#CF5300",
         "c64"         : "#2387FF",
+        "amiga"       : "#000080",
         "default"     : "#2387FF"
     }
     
@@ -215,7 +217,9 @@ FocusScope {
         "tg16"     : "NEC",
         "psx"      : "Sony",
         "psp"      : "Sony",
-        "c64"      : "Commodore"
+        "scummvm"  : "LucasArts",
+        "c64"      : "Commodore",
+        "amiga"    : "Commodore"
     }
 
     property var layoutScreen : {
