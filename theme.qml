@@ -232,9 +232,12 @@ FocusScope {
         "segacd"      : "#C85173",
         "dreamcast"   : "#2387FF",
         "psp"         : "#4E0B9C",
+        "scummvm"     : "#CF5300",
+        "c64"         : "#2387FF",
+        "amiga"       : "#000080",
         "default"     : "#2387FF",
         "system"      : "#000000",
-        "saturn"      : "#2387FF",
+        "saturn"      : "#2387FF"
     }
     
     property var systemColorsDark: {
@@ -274,7 +277,10 @@ FocusScope {
         "pcengine" : "NEC",
         "tg16"     : "NEC",
         "psx"      : "Sony",
-        "psp"      : "Sony"
+        "psp"      : "Sony",
+        "scummvm"  : "LucasArts",
+        "c64"      : "Commodore",
+        "amiga"    : "Commodore"
     }
 
     property var layoutScreen : {

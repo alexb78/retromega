@@ -34,15 +34,28 @@ Item {
     property var playerGenre : {
         return [players, mainGenre].filter(v => { return v != null }).join(" • ")
     }
+    
+    property var releaseDateRating : {
+        return [releaseDate, rating].filter(v => { return v != null }).join(" • ")
+    }
 
     property var releaseDate: {
         if (!game) { return "" }
-        return (game.releaseYear)  ? "Released " + game.releaseYear : ""
+        return (game.releaseYear)  ? "Released " + game.releaseYear : "Released (NA)"
     }
 
     property var developedBy: {
         if (!game) { return "" }
         return "Developed By " + game.developer
+    }
+    
+    property var rating: {
+        if (!game) { return "" }
+        if (game.rating > 1) {
+            return (game.rating)  ? "Rating " + game.rating : "Rating (NA)"
+        } else {
+            return (game.rating)  ? "Rating " + (game.rating * 100).toFixed(0) + "%": "Rating (NA)"
+        }
     }
 
     property var textColor: {
@@ -167,15 +180,20 @@ Item {
                     wrapMode: Text.WordWrap
                     maximumLineCount: 4                    
                 }
-
+                
                 Text {
-                    text: releaseDate
+                    text: releaseDateRating
                     color: textColor
                     opacity: 0.5
                     font.pixelSize: 18
                     font.letterSpacing: -0.35
-                    font.bold: true 
-                }   
+                    font.bold: true
+                    width: parent.width
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    wrapMode: Text.WordWrap
+                    maximumLineCount: 4                    
+                }
 
                 // Text {
                 //     text: developedBy
