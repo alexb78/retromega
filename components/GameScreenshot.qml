@@ -15,7 +15,7 @@ Item {
     onPauseVideoChanged: {
         if (video && active) {
             if (pauseVideo) {
-                videoPlayer.pause()
+                videoPlayer.stop()
             } else {
                 videoPlayer.play()
             }
