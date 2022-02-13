@@ -55,7 +55,7 @@ Item {
             anchors.fill: parent
             fillMode: Image.PreserveAspectCrop
             source: video
-            autoPlay: true
+            autoPlay: false
             loops: MediaPlayer.Infinite 
         }
 
