@@ -15,7 +15,7 @@ Item {
     onPauseVideoChanged: {
         if (video && active) {
             if (pauseVideo) {
-                videoPlayer.pause()
+                videoPlayer.stop()
             } else {
                 videoPlayer.play()
             }
@@ -55,7 +55,7 @@ Item {
             anchors.fill: parent
             fillMode: Image.PreserveAspectCrop
             source: video
-            autoPlay: true
+            autoPlay: false
             loops: MediaPlayer.Infinite 
         }
 

@@ -8,7 +8,7 @@ Item {
     property var active: false
     property var game: null
     property var showFullDescription: false
-    property var pauseScreenshotVideo: false
+    property var pauseScreenshotVideo: true
     //visible: active
 
     onGameChanged: {
