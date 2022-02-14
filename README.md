@@ -30,7 +30,7 @@ To get Pegasus setup on your Retroid Pocket 2 there's a great written guide [ava
 ### v0.4.1 - Feb 14th 22
 
 * Merged dark mode feature
-* Added few missing systems
+* Added few missing systems (C64, Amiga & ScummVM)
 * Changed video player behaviour to start and stop on select button
 
 ### v0.4 - Apr 10th
