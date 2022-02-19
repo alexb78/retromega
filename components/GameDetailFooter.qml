@@ -51,5 +51,16 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
         }
 
+        ButtonLegend {
+            id: button_legend_details
+            title: "Zoom screenshot / video (SELECT to toggle)"
+            key: "X"
+            width: 75
+            visible: true//collectionFilterMode == "all" || collectionShowAllItems
+            anchors.left: button_legend_back.right
+            anchors.leftMargin: 24
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
     }     
 }

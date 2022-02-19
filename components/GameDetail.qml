@@ -8,6 +8,7 @@ Item {
     property var active: false
     property var game: null
     property var showFullDescription: false
+    property var showFullScreenshot: false
     property var pauseScreenshotVideo: true
     //visible: active
 
@@ -100,6 +101,12 @@ Item {
             event.accepted = true;
             return true;
         }
+
+        if (api.keys.isDetails(event)) {
+            event.accepted = true
+            showFullScreenshot = true
+            return
+        }
                                 
         if (event.key == '1048586') {
             pauseScreenshotVideo = !pauseScreenshotVideo
@@ -125,7 +132,7 @@ Item {
         anchors.fill: parent
         anchors.bottom: footer.top
         clip: true
-        focus: active && !showFullDescription
+        focus: active && !showFullDescription && !showFullScreenshot
         
 
         /** 
@@ -265,7 +272,7 @@ Item {
                 screenshot: gameScreenshot
                 video: gameVideo
                 active: gameDetail.active
-                pauseVideo: showFullDescription || pauseScreenshotVideo
+                pauseVideo: showFullDescription || pauseScreenshotVideo || showFullScreenshot
             }
 
         }        
@@ -398,7 +405,7 @@ Item {
     GameDetailFooter {
         id: footer
         anchors.bottom: parent.bottom
-        visible: !showFullDescription
+        visible: !showFullDescription && !showFullScreenshot
     }
 
 
@@ -432,8 +439,6 @@ Item {
                 }
             }
         }
-
-
 
         Rectangle {
             color: theme.background
@@ -485,6 +490,45 @@ Item {
                 PropertyAnimation { easing.type: Easing.OutCubic; duration: 200  }
             }                
         }
+        
+    }
+
+    Item {  
+        id: fullScreenshot
+        anchors.left: parent.left
+        anchors.right: parent.right
+        visible: showFullScreenshot
+        //height: 280
+        //height: 392
+        height: 480
+        focus: showFullScreenshot
+
+        Keys.onPressed: {           
+            // Back to Home            
+            if (api.keys.isCancel(event) || api.keys.isDetails(event)) {
+                if (showFullScreenshot) {
+                    showFullScreenshot = false
+                    event.accepted = true
+                }
+            }
+        }
+
+        Rectangle {
+            color: theme.background
+            anchors.fill: parent
+            opacity: 1.0
+        }
+
+        GameScreenshot {
+            height: 480
+            width: 640
+            anchors.right: parent.right
+            anchors.top: parent.top                 
+            screenshot: gameScreenshot
+            video: gameVideo
+            active: !pauseScreenshotVideo
+            pauseVideo: pauseScreenshotVideo
+        } 
         
     }
 }
