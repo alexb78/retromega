@@ -507,7 +507,8 @@ Item {
             // Back to Home            
             if (api.keys.isCancel(event) || api.keys.isDetails(event)) {
                 if (showFullScreenshot) {
-                    showFullScreenshot = false
+                    showFullScreenshot = !showFullScreenshot
+                    pauseScreenshotVideo = true
                     event.accepted = true
                 }
             }
