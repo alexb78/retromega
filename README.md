@@ -27,6 +27,10 @@ To get Pegasus setup on your Retroid Pocket 2 there's a great written guide [ava
 
 ## Version History
 
+### v0.4.2 - Feb 19th 22
+
+* Added fullscreen screenshot/ video
+
 ### v0.4.1 - Feb 14th 22
 
 * Merged dark mode feature
