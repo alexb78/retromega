@@ -53,7 +53,7 @@ Item {
 
         ButtonLegend {
             id: button_legend_details
-            title: "Zoom screenshot / video (SELECT to toggle)"
+            title: "Show fullscreen media / video (SELECT to toggle)"
             key: "X"
             width: 75
             visible: true//collectionFilterMode == "all" || collectionShowAllItems

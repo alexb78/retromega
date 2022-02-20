@@ -6,6 +6,8 @@ import QtMultimedia 5.15
 
 Item {
     property var screenshot: null
+    property var boxFront: null
+    property var boxBack: null
     property var video: null
     id: gameScreenshot
     width: parent.width
@@ -45,9 +47,19 @@ Item {
         anchors.fill: parent
 
         Image {
+            id: image
             source: screenshot
             anchors.fill: parent
-            fillMode: Image.PreserveAspectCrop
+            fillMode: Image.PreserveAspectFit
+
+            SequentialAnimation {
+                id: playbanner
+                running: true
+                loops: Animation.Infinite
+                PropertyAnimation { target: image; property: "source"; to: boxFront; duration: 2000}
+                PropertyAnimation { target: image; property: "source"; to: boxBack; duration: 2000}
+                PropertyAnimation { target: image; property: "source"; to: screenshot; duration: 2000}
+            }
         }
 
         Video {
@@ -72,6 +84,5 @@ Item {
                 }
             }
         }
-
     }
 }

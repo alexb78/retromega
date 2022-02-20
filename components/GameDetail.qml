@@ -79,6 +79,7 @@ Item {
             return false
         }
     }
+
     property var gameScreenshot: {
         if (game) {
             return game.assets.screenshot
@@ -86,6 +87,23 @@ Item {
             return null
         }
     }
+
+    property var gameBoxFront: {
+        if (game) {
+            return game.assets.boxFront
+        } else {
+            return null
+        }
+    }
+
+    property var gameBoxBack: {
+        if (game) {
+            return game.assets.boxBack
+        } else {
+            return null
+        }
+    }
+
     property var gameVideo: {
         if (game) {
             return game.assets.video
@@ -526,6 +544,8 @@ Item {
             anchors.right: parent.right
             anchors.top: parent.top                 
             screenshot: gameScreenshot
+            boxFront: gameBoxFront
+            boxBack: gameBoxBack
             video: gameVideo
             active: !pauseScreenshotVideo
             pauseVideo: pauseScreenshotVideo
