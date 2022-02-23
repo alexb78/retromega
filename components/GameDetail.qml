@@ -10,6 +10,7 @@ Item {
     property var showFullDescription: false
     property var showFullScreenshot: false
     property var pauseScreenshotVideo: true
+
     //visible: active
 
     onGameChanged: {
@@ -288,6 +289,8 @@ Item {
                 anchors.right: parent.right
                 anchors.top: parent.top                 
                 screenshot: gameScreenshot
+                boxFront: gameBoxFront
+                boxBack: gameBoxBack
                 video: gameVideo
                 active: gameDetail.active
                 pauseVideo: showFullDescription || pauseScreenshotVideo || showFullScreenshot
@@ -469,7 +472,7 @@ Item {
             source: gameScreenshot 
             anchors.fill: parent
             fillMode: Image.PreserveAspectCrop
-            visible: false
+            visible: false 
         }
 
         FastBlur {
@@ -549,7 +552,6 @@ Item {
             video: gameVideo
             active: !pauseScreenshotVideo
             pauseVideo: pauseScreenshotVideo
-        } 
-        
+        }
     }
 }
