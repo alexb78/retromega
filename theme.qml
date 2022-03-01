@@ -24,7 +24,7 @@ FocusScope {
         currentCollectionIndex = api.memory.get('currentCollectionIndex') ?? 0
         currentPage = api.memory.get('currentPage') ?? 'HomePage'
         collectionListIndex = api.memory.get('collectionListIndex') ?? 0
-        collectionSortMode = api.memory.get('collectionSortMode') ?? "title"
+        collectionSortMode = api.memory.get('collectionSortMode') ?? "sortBy"
         collectionSortDirection =  api.memory.get('collectionSortDirection') ?? 0
         collectionFilterMode =  api.memory.get('collectionFilterMode') ?? "all"
         collectionShowAllItems =  api.memory.get('collectionShowAllItems') ?? false
@@ -66,7 +66,7 @@ FocusScope {
 
     // Collection sort mode
     // Collection list index
-    property var collectionSortMode : "title"
+    property var collectionSortMode : "sortBy"
     property var collectionSortDirection : 0
     property var collectionFilterMode : "all"
     property var currentTheme : "dark"
@@ -78,7 +78,7 @@ FocusScope {
         if (collectionSortMode != sortMode || sortMode == "lastPlayed" || sortMode == "rating")  { 
         
             switch (sortMode) {
-                case "title": {
+                case "sortBy": {
                     direction = 0
                     break
                 }
@@ -186,7 +186,7 @@ FocusScope {
     }
 
     property var darkTheme : {
-        "background"         : "#222222",
+        "background"         : "#181818",
         "text"               : "#70ffffff",
         "title"              : "#fff",
         "footerText"         : "#70ffffff",
@@ -198,7 +198,7 @@ FocusScope {
         "headerLinkSelected" : "#ffffff",
         "bodyText"           : "#60ffffff",    
         "buttonSelected"     : "#ffffff",
-        "buttonUnselected"   : "#222222",    
+        "buttonUnselected"   : "#2F2F2F",    
         "listRowColor"       : "#333333",
         "listText"           : "#60ffffff",
         "listTextSelected"   : "#ffffff",      
@@ -230,6 +230,7 @@ FocusScope {
         "psx"      : "#F0CC40",
         "sega32x"      : "#6935E9",
         "segacd"      : "#C85173",
+        "saturn"      : "#0D4CFB",
         "dreamcast"   : "#2387FF",
         "psp"         : "#4E0B9C",
         "scummvm"     : "#CF5300",
@@ -264,6 +265,7 @@ FocusScope {
         "megacd"  : "Sega",
         "mastersystem"  : "Sega",
         "sega32x"  : "Sega",
+        "saturn"   : "Sega",
         "neogeo"   : "SNK",
         "neogeocd" : "SNK",
         "ngp"      : "SNK",
